@@ -65,6 +65,8 @@ linked_list *delete_node(linked_list *list, key *chiave){
 
         list = list -> next;
     }
+
+    return NULL;
 }
 
 linked_list *delete_node_from_index(linked_list *list, int index){
