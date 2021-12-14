@@ -10,7 +10,7 @@ int main(int argc, char **argv){
         if(exit == 1){
             break;
         }
-        printf("what do you want to do?\n\n 1: inzialize a linked list\n 2: insert a new node\n 3: delete a node by key\n 4: delete an element by index\n 5: print all the list\n 6: exit\n\nchoose: ");
+        printf("what do you want to do?\n\n 1: inzialize a linked list\n 2: insert a new node\n 3: delete a node by key\n 4: delete all node with a key key\n 5: delete an element by index\n 6: print all the list\n 7: exit\n\nchoose: ");
         scanf("%d", &decision);
 
         switch(decision){
@@ -23,11 +23,16 @@ int main(int argc, char **argv){
             case 3: printf("\ninsert the key of the node to delete: "); scanf("%d", &key);
                     list = delete_node(list, inzialize_key(key));
                     printf("done!\n"); break;
-            case 4: printf("\ninsert the index of the node to delete: "); scanf("%d", &key);
+            case 4: printf("\ninsert the key of the node to delete: "); scanf("%d", &key);
+                    while(list_include(list, inzialize_key(key))){
+                        list = delete_node(list, inzialize_key(key));
+                    } 
+                    printf("done!\n"); break;
+            case 5: printf("\ninsert the index of the node to delete: "); scanf("%d", &key);
                     list = delete_node_from_index(list, key);
                     printf("done!\n"); break;
-            case 5: print_all_list(list); break;
-            case 6: exit = 1; break;
+            case 6: print_all_list(list); break;
+            case 7: exit = 1; break;
         }
     }
 
