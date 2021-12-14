@@ -96,9 +96,21 @@ linked_list *delete_node_from_index(linked_list *list, int index){
 void print_all_list(linked_list *list){
     int i = 0;
 	while(list -> next){
-		printf("---------\n|   %d  |\n---------\n    |    \n    v    \n", get_element_key(list -> elem));
+        if(get_element_key(list -> elem) < 10){
+            printf("---------\n|   %d   |\n---------\n    |    \n    v    \n", get_element_key(list -> elem));
+        }else if(get_element_key(list -> elem) >= 100){
+            printf("---------\n|  %d  |\n---------\n    |    \n    v    \n", get_element_key(list -> elem));
+        }else{
+            printf("---------\n|   %d  |\n---------\n    |    \n    v    \n", get_element_key(list -> elem));
+        }
 		list = list -> next;
 		i++;
 	}
-	printf("---------\n|   %d  |\n---------\n    |    \n    v    \n", get_element_key(list -> elem));
+	if(get_element_key(list -> elem) < 10){
+        printf("---------\n|   %d   |\n---------\n    |    \n    v    \n", get_element_key(list -> elem));
+    }else if(get_element_key(list -> elem) >= 100){
+        printf("---------\n|  %d  |\n---------\n    |    \n    v    \n", get_element_key(list -> elem));
+    }else{
+        printf("---------\n|   %d  |\n---------\n    |    \n    v    \n", get_element_key(list -> elem));
+    }
 }
