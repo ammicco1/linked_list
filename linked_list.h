@@ -7,12 +7,22 @@ typedef struct linked_list{
 
 linked_list *inzialize_linked_list(element *elem);
 
-void add_node(linked_list *list, element *elem);
+void add_node(linked_list **list, element *elem);
 
-linked_list *delete_node(linked_list *list, key *chiave);
+int delete_node(linked_list **list, key *chiave);
 
-linked_list *delete_node_from_index(linked_list *list, int index);
+int delete_node_from_index(linked_list **list, int index);
 
 void print_all_list(linked_list *list);
 
 bool list_include(linked_list *list, key *key);
+
+void swap_node(linked_list **list, int index1, int index2);
+
+int node_count(linked_list *list);
+
+linked_list *get_node_by_index(linked_list *list, int index);
+
+int partition(linked_list **list, int first_ind, int last_ind);
+
+void quicksort(linked_list **list, int first_ind, int last_ind);
