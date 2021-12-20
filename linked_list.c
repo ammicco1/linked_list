@@ -219,6 +219,22 @@ int get_max_key(linked_list *list){
     return max;
 }
 
+int get_min_key(linked_list *list){
+    int min = get_element_key(list -> elem);
+    int min_tmp;
+
+    while(list -> next){
+        min_tmp = get_element_key((list -> next) -> elem);
+        if(min > min_tmp){
+            min = min_tmp;
+        }
+
+        list = list -> next;
+    }
+
+    return min;
+}
+
 int partition(linked_list **list, int first_ind, int last_ind){
     int x, y, i, j;
 
