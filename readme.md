@@ -19,9 +19,9 @@ WITH THE LIST_MAIN TEST PROGRAM YOU CAN TEST ALL THE FUNCTIONS AND AFTER THAT YO
 
 IF YOU USE LINUX USE THE MAKEFILE, IF YOU USE WINDOWS:
  - PASTE THEESE COMMANDS IN CMD TO COMPILE:
-        gcc -Wall -ansi -pedantic -c key.c element.c linked_list.c list_main.c
-        gcc -Wall -ansi -pedantic -o list_main.exe key.o element.o linked_list.o list_main.o
+        - gcc -Wall -ansi -pedantic -c key.c element.c linked_list.c list_main.c
+        - gcc -Wall -ansi -pedantic -o list_main.exe key.o element.o linked_list.o list_main.o
 
 - AND THIS TO CLEAN:
-        del *.o 
-        del *.exe
+        - del *.o 
+        - del *.exe
