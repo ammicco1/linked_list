@@ -22,6 +22,6 @@ IF YOU USE LINUX USE THE MAKEFILE, IF YOU USE WINDOWS:
     - gcc -Wall -ansi -pedantic -c key.c element.c linked_list.c list_main.c
     - gcc -Wall -ansi -pedantic -o list_main.exe key.o element.o linked_list.o list_main.o
 
-- AND THIS TO CLEAN:
+- AND THEESE TO CLEAN:
     - del *.o 
     - del *.exe
