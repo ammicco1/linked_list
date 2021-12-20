@@ -203,6 +203,20 @@ linked_list *get_node_by_index(linked_list *list, int index){
     return list;
 }
 
+int get_max_key(linked_list *list){
+    int max = get_element_key(list -> elem);
+    int max_tmp;
+
+    while(list -> next){
+        max_tmp = get_element_key(list -> next -> elem);
+        if(max < max_tmp){
+            max = max_tmp;
+        }
+    }
+
+    return max;
+}
+
 int partition(linked_list **list, int first_ind, int last_ind){
     int x, y, i, j;
 

@@ -20,7 +20,8 @@ int main(int argc, char **argv){
 		printf("\t- 7:  SORT THE LIST\n");	
 		printf("\t- 8:  GET KEY BY INDEX\n");
 		printf("\t- 9:  GET THE LIST'S LENGTH\n");
-		printf("\t- 10: PRINT THE LIST\n");
+		printf("\t- 10: GET THE MAX KEY\n");
+		printf("\t- 11: PRINT THE LIST\n");
         printf("---------------------------------------------\n");
         printf("\nCHOISE: "); scanf("%d", &choise);
 
@@ -69,11 +70,11 @@ int main(int argc, char **argv){
 			 		}else{
 				 		printf("INIZIALIZE THE LIST FIRST!\n");
 			 		} break;
-            case 10: if(init){
-						print_all_list(list); 
-					}else{
-						printf("INIZIALIZE THE LIST FIRST!\n");
-					}break;
+			case 7: if(init){
+						quicksort(&list, 0, node_count(list) - 1); printf("DONE!\n");
+			 		}else{
+				 		printf("INIZIALIZE THE LIST FIRST!\n");
+			 		} break;
             case 8: if(init){
 						printf("INSERT THE NODE'S INDEX: "); scanf("%d", &key); printf("\nNODE N° %d HAS KEY: %d\n", key, get_element_key(get_node_by_index(list, key) -> elem));
 					}else{
@@ -84,11 +85,17 @@ int main(int argc, char **argv){
 					}else{
 						printf("INIZIALIZE THE LIST FIRST!\n");
 					} break;
-            case 7: if(init){
-						quicksort(&list, 0, node_count(list) - 1); printf("DONE!\n");
-			 		}else{
-				 		printf("INIZIALIZE THE LIST FIRST!\n");
-			 		} break;
+			case 10: if(init){
+						printf("THE MAX KEY IS: %d\n", get_max_key(list));
+					}else{
+						printf("INIZIALIZE THE LIST FIRST!\n");
+					}break;
+			case 11: if(init){
+						print_all_list(list); 
+					}else{
+						printf("INIZIALIZE THE LIST FIRST!\n");
+					}break;
+           
             default: printf("!! NOT VALID CHOISE !!\n"); break;
         }
     }
