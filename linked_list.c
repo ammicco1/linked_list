@@ -211,6 +211,7 @@ int get_max_key(linked_list *list){
         max_tmp = get_element_key(list -> next -> elem);
         if(max < max_tmp){
             max = max_tmp;
+            list = list -> next;
         }
     }
 
