@@ -208,11 +208,12 @@ int get_max_key(linked_list *list){
     int max_tmp;
 
     while(list -> next){
-        max_tmp = get_element_key(list -> next -> elem);
+        max_tmp = get_element_key((list -> next) -> elem);
         if(max < max_tmp){
             max = max_tmp;
-            list = list -> next;
         }
+
+        list = list -> next;
     }
 
     return max;
