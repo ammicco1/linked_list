@@ -26,8 +26,8 @@ int main(int argc, char **argv){
         printf("\nCHOISE: "); scanf("%d", &choise);
 
         switch(choise){
-            case 1: printf("\nINSERT THE FIRST KEY: "); scanf("%d", &key);
-                    if(!init){
+            case 1: if(!init){
+						printf("\nINSERT THE FIRST KEY: "); scanf("%d", &key);
                         list = inzialize_linked_list(inizialize_element(inzialize_key(key))); 
                         init = true; printf("DONE!\n");
                     }else{
