@@ -21,7 +21,8 @@ int main(int argc, char **argv){
 		printf("\t- 8:  GET KEY BY INDEX\n");
 		printf("\t- 9:  GET THE LIST'S LENGTH\n");
 		printf("\t- 10: GET THE MAX KEY\n");
-		printf("\t- 11: PRINT THE LIST\n");
+		printf("\t- 11: GET NODE INFORMATION\n");
+		printf("\t- 12: PRINT THE LIST\n");
         printf("---------------------------------------------\n");
         printf("\nCHOISE: "); scanf("%d", &choise);
 
@@ -91,6 +92,11 @@ int main(int argc, char **argv){
 						printf("INIZIALIZE THE LIST FIRST!\n");
 					}break;
 			case 11: if(init){
+						printf("INSERT THE INDEX: "); scanf("%d", &key); get_node_information(list, key);
+					}else{
+						printf("INIZIALIZE THE LIST FIRST!\n");
+					}break;
+			case 12: if(init){
 						print_all_list(list); 
 					}else{
 						printf("INIZIALIZE THE LIST FIRST!\n");
