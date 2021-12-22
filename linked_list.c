@@ -249,7 +249,7 @@ int get_node_information(linked_list *list, int index){
 
     for(i = 0; i != index; i++){
         tmp = tmp -> next;
-        if(i == index - 1){
+        if(i == index - 2){
             prev_node = tmp;
         }
     }
