@@ -27,6 +27,8 @@ int get_max_key(linked_list *list);
 
 int get_min_key(linked_list *list);
 
+int get_node_information(linked_list *list, int index);
+
 int partition(linked_list **list, int first_ind, int last_ind);
 
 void quicksort(linked_list **list, int first_ind, int last_ind);

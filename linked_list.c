@@ -235,6 +235,42 @@ int get_min_key(linked_list *list){
     return min;
 }
 
+int get_node_information(linked_list *list, int index){
+    int i, prev, next;
+    linked_list *tmp = list, *prev_node; 
+
+    if(index > node_count(list)){
+        printf("INDEX TOO HIGH!\n");
+        return -1;
+    }else if(index < 0){
+        printf("INDEX TOO LOW!\n");
+        return -1;
+    }
+
+    for(i = 0; i != index; i++){
+        tmp = tmp -> next;
+        if(i == index - 1){
+            prev_node = tmp;
+        }
+    }
+
+    if(tmp -> next == NULL){
+        next = -1;
+    }else{
+        next = get_element_key(tmp -> next -> elem);
+    }
+
+    if(prev_node == NULL){
+        prev = -1;
+    }else{
+        prev = get_element_key(prev_node -> elem);
+    }
+
+    printf("NODE'S INDEX: %d\n\t- PREV: %d\n\t- NEXT: %d\n\t- NODE KEY: %d", index, prev, next, get_element_key(tmp -> elem));
+
+    return 0;
+}
+
 int partition(linked_list **list, int first_ind, int last_ind){
     int x, y, i, j;
 
