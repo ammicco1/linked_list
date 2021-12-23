@@ -247,26 +247,24 @@ int get_node_information(linked_list *list, int index){
         return -1;
     }
 
-    for(i = 0; i != index; i++){
-        tmp = tmp -> next;
-        if(i == index - 2){
-            prev_node = tmp;
+    if(index == 0){
+        printf("NODE'S INDEX: %d\n\t- PREV: -1\n\t- NEXT: %d\n\t- NODE KEY: %d", index, get_element_key(list -> next -> elem), get_element_key(list -> elem));
+    }else{
+        for(i = 0; i != index; i++){
+            if(i == index - 1){
+                prev_node = tmp;
+            }
+            tmp = tmp -> next;
         }
-    }
 
-    if(tmp -> next == NULL){
-        next = -1;
-    }else{
-        next = get_element_key(tmp -> next -> elem);
-    }
+        if(tmp -> next == NULL){
+            next = -1;
+        }else{
+            next = get_element_key(tmp -> next -> elem);
+        }
 
-    if(prev_node == NULL){
-        prev = -1;
-    }else{
-        prev = get_element_key(prev_node -> elem);
+        printf("NODE'S INDEX: %d\n\t- PREV: %d\n\t- NEXT: %d\n\t- NODE KEY: %d", index, get_element_key(prev_node -> elem), next, get_element_key(tmp -> elem));
     }
-
-    printf("NODE'S INDEX: %d\n\t- PREV: %d\n\t- NEXT: %d\n\t- NODE KEY: %d", index, prev, next, get_element_key(tmp -> elem));
 
     return 0;
 }
