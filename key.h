@@ -5,12 +5,12 @@ typedef struct key{
     int key;
 } key;
 
-key *inzialize_key(int chiave);
+key *inzialize_key(int);
 
-void set_key(key *chiave, int new_value);
+void set_key(key *, int);
 
-int get_key(key *chiave);
+int get_key(key *);
 
-int compare_key(key *chiave_1, key *chiave_2);
+int compare_key(key *, key *);
 
-void delete_key(key *chiave);
+void delete_key(key *);

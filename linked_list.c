@@ -2,17 +2,17 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-linked_list *inzialize_linked_list(element *elem){
+linked_list *inzialize_linked_list(element *e){
     linked_list *tmp = (linked_list *) malloc(sizeof(linked_list));
 
-    tmp -> elem = elem;
+    tmp -> elem = e;
     tmp -> next = NULL;
 
     return tmp;
 }
 
-void add_node(linked_list **list, element *elem){
-    linked_list *tmp = inzialize_linked_list(elem);
+void add_node(linked_list **list, element *e){
+    linked_list *tmp = inzialize_linked_list(e);
     linked_list *tmp2 = *list;
     tmp -> next = NULL;
 
@@ -29,7 +29,7 @@ void add_node(linked_list **list, element *elem){
 
 bool list_include(linked_list *list, key *key){
     while(list){
-        if(compare_key(list -> elem -> chiave, key) == 0){
+        if(compare_key(list -> elem -> key, key) == 0){
             return true;
         }
         list = list -> next;
@@ -38,14 +38,14 @@ bool list_include(linked_list *list, key *key){
     return false;
 }
 
-int delete_node(linked_list **list, key *chiave){
+int delete_node(linked_list **list, key *k){
     linked_list *tmp = *list;
 
-    if(!list_include(tmp, chiave)){
-        printf("element %d not included!\n", get_key(chiave));
+    if(!list_include(tmp, k)){
+        printf("element %d not included!\n", get_key(k));
     }
 
-    if(compare_key(tmp -> elem -> chiave, chiave) == 0){
+    if(compare_key(tmp -> elem -> key, k) == 0){
         if(tmp -> next){
             *list = (*list) -> next;
             return 0;
@@ -56,7 +56,7 @@ int delete_node(linked_list **list, key *chiave){
     }
 
     while(tmp -> next){
-        if(compare_key(tmp -> next -> elem -> chiave, chiave) == 0){
+        if(compare_key(tmp -> next -> elem -> key, k) == 0){
             if(tmp -> next){
                 tmp -> next = tmp -> next -> next;
                 return 0;
@@ -236,7 +236,7 @@ int get_min_key(linked_list *list){
 }
 
 int get_node_information(linked_list *list, int index){
-    int i, prev, next;
+    int i, next;
     linked_list *tmp = list, *prev_node; 
 
     if(index > node_count(list)){

@@ -1,30 +1,30 @@
 #include "key.h"
 
-key *inzialize_key(int chiave){
+key *inzialize_key(int k){
     key *tmp = (key *) malloc(sizeof(key));
-    tmp -> key = chiave;
+    tmp -> key = k;
 
     return tmp;
 }
 
-void set_key(key *chiave, int new_value){
-    chiave -> key = new_value;
+void set_key(key *key, int new_value){
+    key -> key = new_value;
 }
 
-int get_key(key *chiave){
-    return chiave -> key;
+int get_key(key *key){
+    return key -> key;
 }
 
-int compare_key(key *chiave_1, key *chiave_2){
-    if(chiave_1 -> key > chiave_2 -> key){
+int compare_key(key *key1, key *key2){
+    if(key1 -> key > key2 -> key){
         return 1;
-    }else if(chiave_1 -> key < chiave_2 -> key){
+    }else if(key1 -> key < key2 -> key){
         return -1;
     }else{
         return 0;
     }
 }
 
-void delete_key(key *chiave){
-    free(chiave);
+void delete_key(key *k){
+    free(k);
 }

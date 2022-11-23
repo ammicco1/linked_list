@@ -5,30 +5,30 @@ typedef struct linked_list{
     struct linked_list *next;
 } linked_list;
 
-linked_list *inzialize_linked_list(element *elem);
+linked_list *inzialize_linked_list(element *);
 
-void add_node(linked_list **list, element *elem);
+void add_node(linked_list **, element *);
 
-int delete_node(linked_list **list, key *chiave);
+int delete_node(linked_list **, key *);
 
-int delete_node_from_index(linked_list **list, int index);
+int delete_node_from_index(linked_list **, int);
 
-void print_all_list(linked_list *list);
+void print_all_list(linked_list *);
 
-bool list_include(linked_list *list, key *key);
+bool list_include(linked_list *, key *);
 
-void swap_node(linked_list **list, int index1, int index2);
+void swap_node(linked_list **, int, int);
 
-int node_count(linked_list *list);
+int node_count(linked_list *);
 
-linked_list *get_node_by_index(linked_list *list, int index);
+linked_list *get_node_by_index(linked_list *, int);
 
-int get_max_key(linked_list *list);
+int get_max_key(linked_list *);
 
-int get_min_key(linked_list *list);
+int get_min_key(linked_list *);
 
-int get_node_information(linked_list *list, int index);
+int get_node_information(linked_list *, int);
 
-int partition(linked_list **list, int first_ind, int last_ind);
+int partition(linked_list **, int, int);
 
-void quicksort(linked_list **list, int first_ind, int last_ind);
+void quicksort(linked_list **, int, int);
