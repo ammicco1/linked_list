@@ -13,17 +13,15 @@ linked_list *inzialize_linked_list(element *e){
 
 void add_node(linked_list **list, element *e){
     linked_list *tmp = inzialize_linked_list(e);
-    linked_list *tmp2 = *list;
-    tmp -> next = NULL;
 
-    if(*list == NULL){
+    if(!(*list)){
         *list = tmp;
     }else{
-        while(tmp2 -> next){
-            tmp2 = tmp2 -> next;
+        while((*list) -> next){
+            *list = (*list) -> next;
         }
 
-        tmp2 -> next = tmp;
+        (*list) -> next = tmp;
     }
 }
 
