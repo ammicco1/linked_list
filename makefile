@@ -1,5 +1,5 @@
 FLAGS = -Wall -ansi -pedantic
-OBJS = list_main.o key.o element.o linked_list.o
+OBJS = list_main.o element.o linked_list.o
 EXEC = list_main
 
 $(EXEC): $(OBJS)
@@ -8,14 +8,11 @@ $(EXEC): $(OBJS)
 $(EXEC).o: $(EXEC).c
 	gcc $(FLAGS) -c $(EXEC).c
 
-linked_list.o: linked_list.c
-	gcc $(FLAGS) -c linked_list.c
+linked_list.o: ./src/linked_list.c
+	gcc $(FLAGS) -c ./src/linked_list.c
 
-element.o: element.c
-	gcc $(FLAGS) -c element.c
-
-key.o: key.c
-	gcc $(FLAGS) -c key.c
+element.o: ./src/element.c
+	gcc $(FLAGS) -c ./src/element.c
 
 clean: 
 	rm -f *.o $(EXEC) $(OBJS)
