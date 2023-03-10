@@ -1,4 +1,5 @@
-#include "linked_list.h"
+#include "./../include/linked_list.h"
+#include <stdio.h>
 
 linked_list *initialize_linked_list(element *e){
     linked_list *tmp = (linked_list *) malloc(sizeof(linked_list));
@@ -175,4 +176,26 @@ linked_list *get_node(linked_list *list, int index){
     }
 
     return list;
+}
+
+linked_list *reverse(linked_list **list, linked_list *prev){
+    linked_list *tmp = (*list);
+    linked_list *tmp2 = tmp && tmp -> next ? tmp -> next : NULL;
+    linked_list *tmp3 = tmp2 && tmp2 -> next ? tmp2 -> next : NULL;
+
+    if(tmp){
+        tmp -> next = prev;
+    }
+
+    if(tmp2){
+        tmp2 -> next = tmp;
+        
+        if(tmp3){
+            return reverse(&tmp3, tmp2);
+        }
+        
+        return tmp2;
+    }
+    
+    return tmp;
 }

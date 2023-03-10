@@ -27,3 +27,5 @@ int list_include(linked_list *list, int key);
 int size(linked_list *list);
 
 linked_list *get_node(linked_list *list, int index);
+
+linked_list *reverse(linked_list **list, linked_list *prev);

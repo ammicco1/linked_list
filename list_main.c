@@ -22,8 +22,9 @@ int main(int argc, char **argv){
 \t- 7:  Get the list's size\n\
 \t- 8:  Get a node\n\
 \t- 9:  Check if the list includes a key\n\
-\t- 10: Print the list\n\
-\t- 11: exit\n\
+\t- 10: Reverse the list\n\
+\t- 11: Print the list\n\
+\t- 12: exit\n\
 ---------------------------------------------\n\
 \nChoise: "); 
 		scanf("%d", &choise);
@@ -76,11 +77,14 @@ int main(int argc, char **argv){
 						printf("The list doesn't include the key\n");
 					}
 					break;
-			case 10: print_list(list);
+			case 10: list = reverse(&list, NULL);
+					printf("ok.\n");
 					break;
-			case 11: exit = 0; break;
+			case 11: print_list(list);
+					break;
+			case 12: exit = 0; printf("bye!\n"); break;
 		}
 	}
-        
+
     return 0;
 }
