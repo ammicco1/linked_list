@@ -1,25 +1,35 @@
-Here's a simple implementation of a linked list in C. 
-The list contains: 
- - An element, that contains a key (int value)
- - A pointer to the next node
+# Linked List
 
-The functions are:
- - Initialize
- - Add node at beginning, at the and or in a specific index
- - Delete first node, last node or specific node
- - Check if the list includes a key
- - Get the size of the list
- - Get a node
- - Print the list
+Simple C implementation of a linked list. 
+The list is defined as a struct of the type: 
+```c
+struct linked_list{
+    struct linked_list *next;
 
-The list_main program is usefull to the the functionality of the data structure.  
-
-Use 
-```bash 
- make 
-``` 
-to compile, and
-```bash
- ./list_main
+    int key; 
+    void *value;
+};
 ```
-to run.
+
+Where: 
+ - next is a pointer to the next node
+ - key is an integer value
+ - value can be everything. In main.c it can be a string
+
+There are 4 basic operation: 
+ - initialize, that create the list
+ - insert, to insert a new node
+ - delete, to delete a node by key
+ - search, to search a node by key 
+
+In this example you can not insert different nodes with the same key. 
+
+Try it with: 
+```bash
+$ make 
+$ ./main
+```
+
+Or include it in your projects. 
+
+Enjoy :) 
